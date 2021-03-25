@@ -1,0 +1,20 @@
+{
+  "name": "parookiejs",
+  "version": "1.0.0",
+  "description": "Make each url parameter a cookie",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EthanMcBloxxer/parookiejs.git"
+  },
+  "keywords": [
+    "parookie",
+	"parookiejs"
+  ],
+  "author": "EthanMcBloxxer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EthanMcBloxxer/parookiejs/issues"
+  },
+  "homepage": "https://github.com/EthanMcBloxxer/parookiejs#readme"
+}

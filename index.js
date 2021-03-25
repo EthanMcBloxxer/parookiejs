@@ -1,7 +1,5 @@
 // Parookie.js v1, by EthanMcBloxxer (MIT License)
-
-var expirationTime = 0; // in seconds, you can edit this, leave as 0 for never, 1 is a good option to make it on just page load
-var debug = false; // make this `true` if you want console logs each time an event completes
+exports.cookify = function(expirationTime, debug) {
 
 if (expirationTime != 0)
 {
@@ -31,4 +29,6 @@ for (let p of new URLSearchParams(window.location.search))
 		if (debug == true) {console.log("Setting cookie " + name + " to " + val + ". It expires on " + expirationTime.toUTCString())}
 		document.cookie = name + "=" + val + ";" + "expires=" + expirationTime.toUTCString();
 	}
+}
+
 }
