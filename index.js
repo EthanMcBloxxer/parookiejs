@@ -1,5 +1,5 @@
-// Parookie.js v1, by EthanMcBloxxer (MIT License)
-exports.cookify = function(expirationTime, debug) {
+// Parookie.js v1.1, by EthanMcBloxxer (MIT License)
+exports.cookify = function(expirationTime, useSessionStorage, debug) {
 
 if (expirationTime != 0)
 {
@@ -19,15 +19,23 @@ for (let p of new URLSearchParams(window.location.search))
 	if (debug == true) {console.log("Found a parameter")}
 	var name = p[0];
 	var val = p[1];
-	if (expirationTime == 0)
+	if (useSessionStorage == false)
 	{
-		if (debug == true) {console.log("Setting cookie " + name + " to " + val)}
-		document.cookie = name + "=" + val;
+		if (expirationTime == 0)
+		{
+			if (debug == true) {console.log("Setting cookie " + name + " to " + val)}
+			document.cookie = name + "=" + val;
+		}
+		else
+		{
+			if (debug == true) {console.log("Setting cookie " + name + " to " + val + ". It expires on " + expirationTime.toUTCString())}
+			document.cookie = name + "=" + val + ";" + "expires=" + expirationTime.toUTCString();
+		}
 	}
 	else
 	{
-		if (debug == true) {console.log("Setting cookie " + name + " to " + val + ". It expires on " + expirationTime.toUTCString())}
-		document.cookie = name + "=" + val + ";" + "expires=" + expirationTime.toUTCString();
+		if (debug == true) {console.log("Setting sessionStorage object " + name + " to " + val)}
+		sessionStorage.setItem(name, val);
 	}
 }
 
