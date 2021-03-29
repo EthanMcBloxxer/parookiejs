@@ -47,6 +47,6 @@ Add values to this for them to be the only creatable cookies, like `["1", "2"]`.
 Log to the console when an event completes
 #### Example
 ```js
-require("function.js");
+require("function");
 cookify(0, false, [], false);
 ```
